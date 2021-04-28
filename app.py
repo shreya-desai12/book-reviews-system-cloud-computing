@@ -115,7 +115,7 @@ def signup():
 
 @app.route('/books/<isbn>')
 def book(isbn):
-    book = db.execute('SELECT * FROM reviews').fetchall()
+    #book = db.execute('SELECT * FROM reviews').fetchall()
 
     book = db.execute('SELECT * FROM books WHERE isbn=:isbn',
                       {'isbn': isbn}).fetchone()
@@ -127,7 +127,7 @@ def book(isbn):
     isbn=br.isbn
     review=br.review
     username=br.username
-    return render_template('book.html', book=book, navbar=True)
+    return render_template('book.html', review=review, book=book, navbar=True)
     
 
     #url = "https://www.goodreads.com/book/isbn/ISBN/{}?key=uRIzbUSdv97Awwv544YQ".format(isbn)
