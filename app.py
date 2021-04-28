@@ -148,9 +148,13 @@ def book(isbn):
 
     return render_template('book.html', book=book, link=link, description=description_markup,
                            image_url=image_url, review_count=review_count, avg_score=avg_score, navbar=True)
-
-
-
+'''
+@app.route('/books/0553803700')
+def booki():
+    book = db.execute('SELECT * FROM books WHERE isbn=0553803700').fetchone()
+    return render_template('book.html', book=book, message= 'great book!', navbar=True)
+    
+'''
 @app.route('/api/<isbn>')
 def book_api(isbn):
 
