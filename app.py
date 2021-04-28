@@ -123,11 +123,11 @@ def book(isbn):
     if book is None:
         return render_template('error.html', message='This book is not available', navbar=True)
     
-    br = db.execute('SELECT * FROM reviews WHERE isbn=:isbn',{'isbn': isbn, 'review': review, 'username': username}).fetchall()
+    br = db.execute('SELECT * FROM reviews WHERE isbn=:isbn',{'isbn': isbn}).fetchall()
     isbn=br.isbn
     review=br.review
-    username=br.username
-    return render_template('book.html', review=review, br=br, book=book, navbar=True)
+    username=br.user_name
+    return render_template('book.html', br=br, book=book, navbar=True)
     
 
     #url = "https://www.goodreads.com/book/isbn/ISBN/{}?key=uRIzbUSdv97Awwv544YQ".format(isbn)
