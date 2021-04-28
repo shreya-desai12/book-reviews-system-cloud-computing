@@ -1,19 +1,21 @@
-{% extends 'layout.html' %}
 
-{% block title %}
-    {{ book.title }} -> {{ book.isbn }}
-{% endblock %}
 
-{% block body %}
-    <div class="container" style="margin-top: 70px">
 
-    <h1>{{ book.title }} ({{ book.year }})<div style="font-size: 25px;">by {{ book.author }}</div></h1>
+{% extends 'layout.html' %} {% block title %} {{ book.title }} -> {{ book.isbn
+}} {% endblock %} {% block body %}
+<div class="container" style="margin-top: 70px">
+	<h1>
+		{{ book.title }} ({{ book.year }})
+		<div style="font-size: 25px">by {{ book.author }}</div>
+	</h1>
 
-    <br>
-        <h1>Review</h1>
-        { % for rev in br %}
-        <p>{{ rev.review }}</p>
-        <p>{{ rev.user_name }}</p>
-        {% endfor %}
-        <div>
-{% endblock %}
+	<br />
+	<h1>Review</h1>
+	{% for rev in br %}
+	<p>{{ rev.review }}</p>
+	<p>{{ rev.user_name }}</p>
+	<br />
+	<br />
+	{% endfor %}
+	<div>{% endblock %}</div>
+</div>
