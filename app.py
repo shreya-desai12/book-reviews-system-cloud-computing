@@ -115,7 +115,7 @@ def signup():
 
 @app.route('/books/<isbn>')
 def book(isbn):
-    book = db.execute('SELECT * FROM reviews).fetchall()
+    book = db.execute('SELECT * FROM reviews').fetchall()
 
     #book = db.execute('SELECT * FROM reviews WHERE isbn=:isbn',
                       #{'isbn': isbn}).fetchall()
