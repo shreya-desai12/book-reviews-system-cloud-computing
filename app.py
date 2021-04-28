@@ -114,7 +114,7 @@ def signup():
 
 
 @app.route('/books/<isbn>')
-def books(isbn):
+def book(isbn):
 
     book = db.execute('SELECT * FROM reviews WHERE isbn=:isbn',
                       {'isbn': isbn}).fetchall()
@@ -149,7 +149,7 @@ def books(isbn):
                            image_url=image_url, review_count=review_count, avg_score=avg_score, navbar=True)
 '''
 @app.route('/books/0553803700')
-def book():
+def booki():
     
     return render_template('isaac.html', message='reviews', navbar=True)
     
