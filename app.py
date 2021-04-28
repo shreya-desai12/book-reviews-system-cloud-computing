@@ -154,7 +154,7 @@ def booki():
     
     return render_template('isaac.html', message='reviews', navbar=True)
     
-'''
+
 @app.route('/api/<isbn>')
 def book_api(isbn):
 
@@ -164,7 +164,7 @@ def book_api(isbn):
     if book is None:
         api = jsonify({'error': 'This book is not available'})
         return api
-
+'''
     url = "https://www.goodreads.com/book/isbn/{}?key=uRIzbUSdv97Awwv544YQ".format(isbn)
     res = requests.get(url)
     tree = ElementTree.fromstring(res.content)
