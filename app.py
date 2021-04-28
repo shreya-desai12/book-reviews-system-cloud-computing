@@ -147,10 +147,8 @@ def book(isbn):
     return render_template('book.html', book=book, link=link, description=description_markup,
                            image_url=image_url, review_count=review_count, avg_score=avg_score, navbar=True)
 '''
-@app.route('/books/0553803700')
-def booki():
-    
-    return render_template('isaac.html', message='reviews', navbar=True)
+
+
     
 
 @app.route('/api/<isbn>')
