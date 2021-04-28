@@ -112,7 +112,7 @@ def signup():
     else:
         return render_template('signup.html', navbar=False)
 
-
+'''
 @app.route('/books/<isbn>')
 def book(isbn):
 
@@ -133,7 +133,7 @@ def book(isbn):
     #url = "https://www.goodreads.com/book/isbn/ISBN/{}?key=uRIzbUSdv97Awwv544YQ".format(isbn)
     #res = requests.get(url)
     #tree = ElementTree.fromstring(res.content)
-'''
+
     try:
         description = tree[1][16].text
         image_url = tree[1][8].text
@@ -150,9 +150,9 @@ def book(isbn):
                            image_url=image_url, review_count=review_count, avg_score=avg_score, navbar=True)
 '''
 @app.route('/books/0553803700')
-def booki():
-    book = db.execute('SELECT * FROM books WHERE isbn=0553803700').fetchone()
-    return render_template('book.html', book=book, message= 'great book!', navbar=True)
+def book():
+    
+    return render_template('isaac.html', message='reviews', navbar=True)
     
 '''
 @app.route('/api/<isbn>')
