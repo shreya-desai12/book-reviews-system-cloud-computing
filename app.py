@@ -122,7 +122,7 @@ def book(isbn):
     if book is None:
         return render_template('error.html', message='This book is not available', navbar=True)
 
-    url = "https://www.goodreads.com/book/isbn/{}?key=uRIzbUSdv97Awwv544YQ".format(isbn)
+    url = "https://www.goodreads.com/book/isbn/ISBN/{}?key=uRIzbUSdv97Awwv544YQ".format(isbn)
     res = requests.get(url)
     tree = ElementTree.fromstring(res.content)
 
