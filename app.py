@@ -114,7 +114,7 @@ def signup():
 
 
 @app.route('/books/<isbn>')
-def book(isbn):
+def books(isbn):
 
     book = db.execute('SELECT * FROM books WHERE isbn=:isbn',
                       {'isbn': isbn}).fetchone()
@@ -132,7 +132,7 @@ def book(isbn):
     #url = "https://www.goodreads.com/book/isbn/ISBN/{}?key=uRIzbUSdv97Awwv544YQ".format(isbn)
     #res = requests.get(url)
     #tree = ElementTree.fromstring(res.content)
-
+'''
     try:
         description = tree[1][16].text
         image_url = tree[1][8].text
