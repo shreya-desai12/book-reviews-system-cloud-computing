@@ -11,8 +11,9 @@
 
     <br>
         <h1>Review</h1>
-        <p>{{ br.review }}</p>
-            <br>
-        <p>{{ br.user_name }}</p>
+        { % for rev in br %}
+        <p>{{ rev.review }}</p>
+        <p>{{ rev.user_name }}</p>
+        {% endfor %}
         <div>
 {% endblock %}
