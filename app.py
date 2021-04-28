@@ -116,9 +116,10 @@ def signup():
 @app.route('/books/<isbn>')
 def book(isbn):
 
-    book = db.execute('SELECT * FROM reviews WHERE isbn=:isbn',
+    #book = db.execute('SELECT * FROM reviews WHERE isbn=:isbn',
+                      #{'isbn': isbn}).fetchall()
+ book = db.execute('SELECT * FROM reviews,
                       {'isbn': isbn}).fetchall()
-
     if book is None:
         return render_template('error.html', message='This book is not available', navbar=True)
     
