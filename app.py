@@ -115,10 +115,10 @@ def signup():
 
 @app.route('/books/<isbn>')
 def book(isbn):
-    book = db.execute('SELECT * FROM reviews').fetchall()
+    #book = db.execute('SELECT * FROM reviews').fetchall()
 
-    #book = db.execute('SELECT * FROM reviews WHERE isbn=:isbn',
-                      #{'isbn': isbn}).fetchall()
+    book = db.execute('SELECT * FROM books WHERE isbn=:isbn',
+                      {'isbn': isbn}).fetchone()
                     
     if book is None:
         return render_template('error.html', message='This book is not available', navbar=True)
@@ -127,7 +127,7 @@ def book(isbn):
     #isbn=br.isbn
     #review=br.review
     #username=br.username
-    return render_template('reviews.html', book=book, navbar=True)
+    return render_template('book.html', book=book, navbar=True)
     
 
     #url = "https://www.goodreads.com/book/isbn/ISBN/{}?key=uRIzbUSdv97Awwv544YQ".format(isbn)
