@@ -123,7 +123,7 @@ def book(isbn):
     if book is None:
         return render_template('error.html', message='This book is not available', navbar=True)
     
-    br = db.execute('SELECT * FROM reviews WHERE isbn=:isbn',{'isbn': isbn}).fetchall()
+    br = db.execute('SELECT * FROM reviews WHERE isbn=:isbn',{'isbn': isbn}).fetchone()
     isbn=br.isbn
     review=br.review
     username=br.user_name
