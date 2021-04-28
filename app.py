@@ -124,7 +124,7 @@ def book(isbn):
     
     br = db.execute('SELECT * FROM reviews WHERE isbn=:isbn',
                              {'isbn': isbn, 'review': review, 'username': username}).fetchone()
-    return render_template('book.html',br,navbar=True)
+    return render_template('book.html', br=br, book=book, isbn=isbn, review=review, username=username, navbar=True)
     
 
     #url = "https://www.goodreads.com/book/isbn/ISBN/{}?key=uRIzbUSdv97Awwv544YQ".format(isbn)
