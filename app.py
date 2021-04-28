@@ -13,8 +13,8 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 
 engine = create_engine(
-    'postgres://hbohcwbaukrfpj:7e99e59537a38c868085aec082c903eecf2f63b3aa426162615012dc98c93ceb@ec2-54-152-175-141.'
-    'compute-1.amazonaws.com:5432/d34ung0btlp93t')
+    'postgres://chbdssotnupsvh:e847ea8f4b564dafd973e087d1d1317fa9d7d0e2c3ff6e5e11339291c4f67636@ec2-107-22-83-3.'
+    'compute-1.amazonaws.com:5432/d2u8sdenc9esn2')
 db = scoped_session(sessionmaker(bind=engine))
 
 
